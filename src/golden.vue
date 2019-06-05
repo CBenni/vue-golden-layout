@@ -176,7 +176,6 @@ export default class goldenLayout extends goldenContainer {
 		});
 		const isSubWindow = /[?&]gl-window=/.test(window.location.search);
 		state
-			//.then(s=> sleep(isSubWindow?2000:0, s))
 			.then((state: any)=> {
 			this.subWindow(isSubWindow);
 			if(state && !isSubWindow) {
