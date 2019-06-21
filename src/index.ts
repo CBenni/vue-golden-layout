@@ -9,8 +9,8 @@ import glRoute from './router/gl-route.vue'
 import glContainerRoute from './router/gl-container-route.vue'
 export { glCustomContainer } from './roles'
 
-const templateLoader = "TODO",
-	templateDefiner = "TODO";
+import templateLoader from './template-loader.vue'
+import templateDefiner from './template-definer.vue'
 
 var components : any = {
 	goldenLayout, glRouter, glRoute

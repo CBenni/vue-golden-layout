@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import { Component, Prop, Watch, Inject } from 'vue-property-decorator'
+import templateLoader from './template-loader.vue'
 
 export function UsingSlots(...slots: string[]) {
 	return function(target: any) {
@@ -154,7 +155,9 @@ export class goldenChild extends goldenItem {
 	}
 	
 	created() {
-		if(!(this.vueParent instanceof goldenContainer))
+		var isGoldenContainer = this.vueParent instanceof goldenContainer,
+			isTemplateLoader = this.vueParent instanceof templateLoader;
+		if(!isGoldenContainer && !isTemplateLoader)
 			throw new Error('gl-child can only appear directly in a golden-layout container');
 	}
 	nodePath() {
